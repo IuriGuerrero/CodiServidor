@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.mjs",
+  "scripts": {
+    "start": "node app.mjs"
+  },
+  "author": "zwoosks",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "serialport": "^9.1.0",
+    "socket.io": "^4.1.2"
+  }
+}

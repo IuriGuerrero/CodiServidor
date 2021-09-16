@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html>
+    <link rel="icon" href="icona.png">
+    <title>Radar Arduino</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        #radar {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+    <script src="radar.js"></script>
+    <body>
+        <h1>test</h1>
+        <canvas id="radar" width="800" height="500"></canvas>
+        <script>
+            // Inicialitzar el radar
+            const radar = new Radar();
+            radar.animate();
+
+            // Inicialitzar la connexió websocket
+            const ws = new WebSocket('ws://localhost:3000/');
+            ws.onmessage = (message) => {
+                radar.update(JSON.parse(message.data));
+            }
+        </script>
+    </body>
+</html>
